@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surgical Procedure Display</title>
+  <meta name="description" content="Interactive visual guide to bariatric surgical procedures including Laparoscopic Sleeve Gastrectomy, Roux-en-Y Gastric Bypass, and Laparoscopic Gastric Banding.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Bariatric Surgeries</h1>
+      <p class="subtitle">Interactive Procedure Guide</p>
+    </header>
+
+    <div class="tabs-container" id="tabs-container">
+      <!-- Tabs will be injected here via JS -->
+    </div>
+
+    <main class="main-content">
+      <div class="surgery-card">
+        <div class="card-header">
+          <h2 id="surgery-title">Surgery Title</h2>
+          <p id="surgery-description" class="surgery-desc">Description</p>
+          <div id="surgery-tags" class="tags-container">
+            <!-- Tags injected here -->
+          </div>
+        </div>
+
+        <div class="info-grid" id="info-grid">
+          <div class="info-item">
+            <span class="info-label">Duration</span>
+            <span class="info-value" id="info-duration">-</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Anesthesia</span>
+            <span class="info-value" id="info-anesthesia">-</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Recovery</span>
+            <span class="info-value" id="info-recovery">-</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Approach</span>
+            <span class="info-value" id="info-approach">-</span>
+          </div>
+        </div>
+
+        <div class="progress-container">
+          <div class="progress-header">
+            <span id="progress-text">Step 1 of X</span>
+            <span id="progress-percent">0%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+        </div>
+
+        <div class="timeline-container" id="timeline-container">
+          <!-- Timeline steps injected here -->
+        </div>
+
+        <div class="nav-buttons">
+          <button id="btn-prev" class="nav-btn" disabled>Previous</button>
+          <button id="btn-next" class="nav-btn">Next</button>
+        </div>
+      </div>
+
+      <div class="visual-panel">
+        <div class="step-image-container" id="step-image-container" style="display: none;">
+          <img id="step-image" src="" alt="Procedure step illustration" class="step-illustration" />
+        </div>
+        <div class="body-diagram-container" id="body-diagram-container">
+          <!-- SVG Torso Diagram -->
+          <svg viewBox="0 0 100 100" class="torso-svg" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="2" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+            <!-- Simple Stomach Image Background -->
+            <image href="/Users/sethu/.gemini/antigravity/brain/230bf372-4cb6-4b3a-9765-34d87ffa7290/simple_stomach_1779031950709.png" x="0" y="0" width="100" height="100" preserveAspectRatio="xMidYMid slice" opacity="0.95" />
+            
+            <!-- Incision points will be injected dynamically -->
+            <g id="incision-points"></g>
+          </svg>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
